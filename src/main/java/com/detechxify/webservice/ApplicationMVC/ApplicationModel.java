@@ -14,16 +14,16 @@ public class ApplicationModel {
 	@Id
 	String name;
 	Duration duration ;
-	@ManyToOne
-	UserModel user;
+	String username;
 		
 	public ApplicationModel() {
 
 	}
 	
-	public ApplicationModel(String name, Duration duration) {
+	public ApplicationModel(String name, Duration duration, String user) {
 		this.name = name;
 		this.duration = duration;
+		this.username = user;
 	}
 
 	public String getName() {
@@ -42,12 +42,12 @@ public class ApplicationModel {
 		this.duration = duration;
 	}
 
-	public UserModel getUser() {
-		return user;
+	public String getUser() {
+		return username;
 	}
 
-	public void setUser(UserModel user) {
-		this.user = user;
+	public void setUser(String user) {
+		this.username = user;
 	}
 	
 }

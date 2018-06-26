@@ -22,18 +22,18 @@ public class ApplicationController {
 	}
 	
 	@RequestMapping("/users/{username}/applications/{applicationId}")
-	public ApplicationModel getApplication(@PathVariable("applicationId") String appId) {
-		return service.getApplication(appId);
+	public ApplicationModel getApplication(@PathVariable("username") String username, @PathVariable("applicationId") String appId) {
+		return service.getApplication(username, appId);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/users/{userId}/applications")
-	public void addApplication(@RequestBody ApplicationModel application) {
-		service.addApplication(application);
+	public void addApplication(@PathVariable("userId") String username, @RequestBody ApplicationModel application) {
+		service.addApplication(username, application);
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/users/{username}/applications/{applicationId}")
-	public void updateApplication(@RequestBody ApplicationModel application) {
-		service.updateApplication(application);
+	public void updateApplication(@PathVariable("userId") String username, @RequestBody ApplicationModel application) {
+		service.updateApplication(username, application);
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/users/{username}/applications/{applicationId}")

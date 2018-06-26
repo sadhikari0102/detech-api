@@ -14,11 +14,17 @@ public class UserModel {
 
 	}
 
-	public UserModel(long id, String username, String password, String email) {
+	public UserModel(String username, String password, String email) {
 		this.username = username;
 		this.password = password;
 		this.email = email;
 	}
+/*	
+	public UserModel(UserModel user) {
+		this.username = user.username;
+		this.password = user.password;
+		this.email = user.email;
+	}*/
 	
 	public String getUsername() {
 		return username;
